@@ -8,17 +8,17 @@ function myFunction() {
   var updateFileId = "12KPJ6m7xgENk5VYXLJ03HZ-7Rj5UekQa";
   var imageURL = "https://smtgvs.weathernews.jp/s/forecast/img25/JAPAN."+date+".png";
 
-  //画像取得
+  //get image
   var image=UrlFetchApp.fetch(imageURL).getBlob();
   
 
 
-  //画像更新
+  //update image
   updateFileById(DriveApp.getFileById(updateFileId).getName(),updateFileId,image);
 }
   
 
-//指定したidのファイルの内容をblobで上書きする
+//update Blob
 function updateFileById(title,id,blob) {
   var body = {
     title: title ,
