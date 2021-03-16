@@ -1,0 +1,35 @@
+
+function myFunction() {
+  var testDate = new Date();
+  var secondDate = new Date();
+  secondDate.setHours(testDate.getHours()+6);
+
+  var date = Utilities.formatDate(secondDate, "GMT+9", "yyyyMMdd");
+  Logger.log(secondDate)
+  var updateFileId = "File_ID";
+  var imageURL = "https://smtgvs.weathernews.jp/s/forecast/img25/JAPAN."+date+".png";
+
+  //get image
+  var image=UrlFetchApp.fetch(imageURL).getBlob();
+  
+
+
+  //update image
+  updateFileById(DriveApp.getFileById(updateFileId).getName(),updateFileId,image);
+}
+  
+
+//Update Blob
+function updateFileById(title,id,blob) {
+  var body = {
+    title: title ,
+    mimeType: 'video/mp4'
+
+  };
+  file = Drive.Files.update(body,id, blob);
+}
+
+var files = DriveApp.getFolderById("Drive_Folder_ID").getFiles();
+while(files.hasNext()){
+   file = files.next();
+ }
