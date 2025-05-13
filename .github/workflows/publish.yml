@@ -74,7 +74,7 @@ jobs:
       - name: Create ZIP archive for UnityPackage
         if: steps.read_version.outputs.last_tag != steps.read_version.outputs.current_version
         run: |
-          zip -r ${{ steps.read_version.outputs.name }}-${{ steps.read_version.outputs.current_version }}.unitypackage.zip ${{ steps.read_version.outputs.name }}-${{ steps.read_version.outputs.current_version }}.unitypackage
+          zip -r ${{ steps.read_version.outputs.name }}-${{ steps.read_version.outputs.current_version }}.unitypackage.zip . -i ${{ steps.read_version.outputs.name }}-${{ steps.read_version.outputs.current_version }}.unitypackage
 
       - name: Release
         if: steps.read_version.outputs.last_tag != steps.read_version.outputs.current_version
