@@ -48,6 +48,9 @@ const getWeather = async (date: Date = new Date(), client?: Deno.HttpClient) => 
   return res
 }
 const folder = path.join(".", "pages")
+if (!await fs.exists(folder)) {
+  await Deno.mkdir(folder, { recursive: true })
+}
 for (const [key, value] of Object.entries(weathers)) {
   const res = await getWeather(value, client)
   if (res.body) {
