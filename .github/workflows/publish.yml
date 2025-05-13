@@ -109,5 +109,5 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           repository: Sonic853/vpm-repos
-          event-type: publish-vpm
-          client-payload: '{"repository": "${{ github.repository }}", "path": "${{ github.event.repository.name }}", "name": "${{ steps.read_version.outputs.name }}", "version": "${{ steps.read_version.outputs.current_version }}", "hash": "${{ steps.zip.outputs.hash }}"}'
+          event-type: publish-branch-vpm
+          client-payload: '{"repository": "${{ github.repository }}", "path": "${{ github.event.repository.name }}", "name": "${{ steps.read_version.outputs.name }}", "version": "${{ steps.read_version.outputs.current_version }}", "hash": "${{ steps.zip.outputs.hash }}", "branch": "unity"}'
