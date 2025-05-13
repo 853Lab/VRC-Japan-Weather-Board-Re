@@ -29,6 +29,9 @@ jobs:
         with:
           timezoneLinux: 'Asia/Tokyo'
 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Read updatetime.txt before running Deno
         id: read_before_updatetime
         run: echo "date=$(cat updatetime.txt)" >> $GITHUB_OUTPUT
