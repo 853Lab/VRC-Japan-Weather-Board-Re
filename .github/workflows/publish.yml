@@ -49,6 +49,7 @@ jobs:
         uses: rickstaa/action-create-tag@v1
         with:
           tag: "${{ steps.read_version.outputs.current_version }}"
+          tag_exists_error: false
 
       - name: Create ZIP archive
         if: steps.read_version.outputs.last_tag != steps.read_version.outputs.current_version
