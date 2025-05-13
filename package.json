@@ -1,0 +1,18 @@
+{
+  "name": "com.sonic853.udon.japan.weather.board",
+  "version": "1.0.0",
+  "displayName": "Sonic853 - VRC Japan Weather Board Re",
+  "description": "VRChat 向け日本天気予報パネル Re",
+  "unity": "2022.3",
+  "homepage": "https://github.com/853Lab/VRC-Japan-Weather-Board-Re",
+  "documentationUrl": "https://github.com/853Lab/VRC-Japan-Weather-Board-Re",
+  "changelogUrl": "https://github.com/853Lab/VRC-Japan-Weather-Board-Re/releases",
+  "licensesUrl": "https://github.com/853Lab/VRC-Japan-Weather-Board-Re/blob/master/LICENSE",
+  "license": "MIT",
+  "keywords": [],
+  "author": {
+    "name": "Sonic853, bm9520",
+    "email": "sonic853@qq.com",
+    "url": "https://github.com/Sonic853"
+  }
+}
