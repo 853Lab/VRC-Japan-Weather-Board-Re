@@ -43,6 +43,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: Packages/${{ steps.read_version.outputs.name }}
+          ref: unity
 
       - name: Create Tag
         if: steps.read_version.outputs.last_tag != steps.read_version.outputs.current_version
