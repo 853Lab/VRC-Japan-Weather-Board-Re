@@ -25,8 +25,9 @@ namespace Sonic853.Udon.Japan.Weather.Board
             if (!reload && cacheContent && IndexOf(cacheUrls, _url, out var index) != -1)
             {
                 useAlt = false;
-                SendFunction(udonSendFunction, sendCustomEvent, setVariableName, cacheContents[index]);
-                SetImage(cacheContents[index]);
+                var _cacheContent = cacheContents[index];
+                SendFunction(udonSendFunction, sendCustomEvent, setVariableName, _cacheContent);
+                SetImage(_cacheContent);
             }
             else
             {
