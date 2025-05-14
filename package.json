@@ -1,6 +1,6 @@
 {
   "name": "com.sonic853.udon.japan.weather.board",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Sonic853 - VRC Japan Weather Board Re",
   "description": "VRChat 向け日本天気予報パネル Re",
   "unity": "2022.3",
