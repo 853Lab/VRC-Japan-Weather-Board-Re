@@ -20,12 +20,12 @@ if (flags.proxy) {
   })
 }
 
-// const oneDay = 86400000
+const oneDay = 86400000
 
 const weathers: Record<string, Date> = {
   day0: new Date(),
-  // day1: new Date(Date.now() + oneDay),
-  // day2: new Date(Date.now() + oneDay * 2),
+  day1: new Date(Date.now() + oneDay),
+  day2: new Date(Date.now() + oneDay * 2),
 }
 
 const getWeather = async (date: Date = new Date(), client?: Deno.HttpClient) => {
