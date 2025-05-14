@@ -1,5 +1,7 @@
-# VRC-Japan-Weather-Board
-Get an updated weather map. I designed it to get tomorrow's weather when it passes after 6:00 PM(GMT +9, Japan/Korea time). Before then, it keeps update recent information of today's one.
+# VRC Japan Weather Board Re
+Remastered version of VRC-Japan-Weather-Board
+
+Fetches the current day's weather via action and caches it, no need to convert to MP4.
 
 
 
