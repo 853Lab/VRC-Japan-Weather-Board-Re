@@ -17,14 +17,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
             ref: unity
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: latest
 
       - name: Bump version
         id: read_version
@@ -40,7 +40,7 @@ jobs:
           echo "name=$name" >> $GITHUB_OUTPUT
 
       - name: Checkout repository to Packages
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: Packages/${{ steps.read_version.outputs.name }}
           ref: unity
@@ -80,7 +80,7 @@ jobs:
 
       - name: Release
         if: steps.read_version.outputs.last_tag != steps.read_version.outputs.current_version
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           body: |
             ### **Full Changelog**: https://github.com/${{ github.repository }}/compare/${{ steps.read_version.outputs.last_tag }}...${{ steps.read_version.outputs.current_version }}
@@ -106,7 +106,7 @@ jobs:
 
       - name: Dispatch version to vpm-repos
         if: github.event.repository.private == false && steps.read_version.outputs.last_tag != steps.read_version.outputs.current_version
-        uses: peter-evans/repository-dispatch@v3
+        uses: peter-evans/repository-dispatch@v4
         with:
           token: ${{ secrets.PAT }}
           repository: Sonic853/vpm-repos
